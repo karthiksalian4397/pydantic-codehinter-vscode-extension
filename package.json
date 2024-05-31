@@ -1,12 +1,12 @@
 {
-    "name": "pydantic-codecompletion-extension",
+    "name": "voyager-codecompletion-extension",
     "displayName": "Voyager code completion",
-    "description": "code completion for pydantic python module files using `pydantic-codecompletion-extension`.",
-    "version": "2022.0.0-dev",
+    "description": "Voyager is a INFINEON specific tool for data extraction and this extension is to help code completion for pydantic python module during plugin development.",
+    "version": "1.0.0",
     "preview": true,
     "serverInfo": {
         "name": "Voyager code completion",
-        "module": "pydantic-codecompletion-extension"
+        "module": "voyager-codecompletion-extension"
     },
     "publisher": "KarthikSalian",
     "license": "MIT",
@@ -24,7 +24,7 @@
     },
     "keywords": [
         "python",
-        "pydantic-codecompletion-extension"
+        "voyager-codecompletion-extension"
     ],
     "engines": {
         "vscode": "^1.78.0"
@@ -59,12 +59,12 @@
         "lint": "eslint src --ext ts",
         "format-check": "prettier --check 'src/**/*.ts' 'build/**/*.yml' '.github/**/*.yml'",
         "test": "node ./out/test/runTest.js",
-        "vsce-package": "vsce package -o pydantic-codecompletion-extension.vsix"
+        "vsce-package": "vsce package -o voyager-codecompletion-extension.vsix"
     },
     "contributes": {
         "configuration": {
             "properties": {
-                "pydantic-codecompletion-extension.args": {
+                "voyager-codecompletion-extension.args": {
                     "default": [
                         "~/.voyager_current_model/model.py"
                     ],
@@ -75,30 +75,30 @@
                     "scope": "resource",
                     "type": "array"
                 },
-                "pydantic-codecompletion-extension.path": {
+                "voyager-codecompletion-extension.path": {
                     "default": [],
-                    "description": "When set to a path to pydantic-codecompletion-extension binary, extension will use that. NOTE: Using this option may slowdown server response time.",
+                    "description": "When set to a path to voyager-codecompletion-extension binary, extension will use that. NOTE: Using this option may slowdown server response time.",
                     "scope": "resource",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
-                "pydantic-codecompletion-extension.importStrategy": {
+                "voyager-codecompletion-extension.importStrategy": {
                     "default": "useBundled",
-                    "description": "Defines where `pydantic-codecompletion-extension` is imported from. This setting may be ignored if `pydantic-codecompletion-extension.path` is set.",
+                    "description": "Defines where `voyager-codecompletion-extension` is imported from. This setting may be ignored if `voyager-codecompletion-extension.path` is set.",
                     "enum": [
                         "useBundled",
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
-                        "Always use the bundled version of `pydantic-codecompletion-extension`.",
-                        "Use `pydantic-codecompletion-extension` from environment, fallback to bundled version only if `pydantic-codecompletion-extension` not available in the environment."
+                        "Always use the bundled version of `voyager-codecompletion-extension`.",
+                        "Use `voyager-codecompletion-extension` from environment, fallback to bundled version only if `voyager-codecompletion-extension` not available in the environment."
                     ],
                     "scope": "window",
                     "type": "string"
                 },
-                "pydantic-codecompletion-extension.interpreter": {
+                "voyager-codecompletion-extension.interpreter": {
                     "default": [],
                     "description": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
                     "scope": "resource",
@@ -107,7 +107,7 @@
                     },
                     "type": "array"
                 },
-                "pydantic-codecompletion-extension.showNotifications": {
+                "voyager-codecompletion-extension.showNotifications": {
                     "default": "off",
                     "description": "Controls when notifications are shown by this extension.",
                     "enum": [
@@ -131,7 +131,7 @@
             {
                 "title": "Restart Server",
                 "category": "Voyager code completion",
-                "command": "pydantic-codecompletion-extension.restart"
+                "command": "voyager-codecompletion-extension.restart"
             }
         ]
     },
