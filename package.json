@@ -1,22 +1,22 @@
 {
-    "name": "<pytool-module>",
-    "displayName": "<pytool-display-name>",
-    "description": "Linting support for python files using `<pytool-module>`.",
+    "name": "pydantic-codecompletion-extension",
+    "displayName": "Voyager code completion",
+    "description": "code completion for pydantic python module files using `pydantic-codecompletion-extension`.",
     "version": "2022.0.0-dev",
     "preview": true,
     "serverInfo": {
-        "name": "<pytool-display-name>",
-        "module": "<pytool-module>"
+        "name": "Voyager code completion",
+        "module": "pydantic-codecompletion-extension"
     },
-    "publisher": "<my-publisher>",
+    "publisher": "KarthikSalian",
     "license": "MIT",
-    "homepage": "https://github.com/<my-github>/<my-extension-project>",
+    "homepage": "https://github.com/karthiksalian4397/pydantic-codehinter-vscode-extension",
     "repository": {
         "type": "git",
-        "url": "https://github.com/<my-github>/<my-extension-project>.git"
+        "url": "https://github.com/karthiksalian4397/pydantic-codehinter-vscode-extension.git"
     },
     "bugs": {
-        "url": "https://github.com/<my-github>/<my-extension-project>/issues"
+        "url": "https://github.com/karthiksalian4397/pydantic-codehinter-vscode-extension/issues"
     },
     "galleryBanner": {
         "color": "#1e415e",
@@ -24,7 +24,7 @@
     },
     "keywords": [
         "python",
-        "<pytool-module>"
+        "pydantic-codecompletion-extension"
     ],
     "engines": {
         "vscode": "^1.78.0"
@@ -40,7 +40,7 @@
     "capabilities": {
         "virtualWorkspaces": {
             "supported": false,
-            "description": "Virtual Workspaces are not supported with <pytool-display-name>."
+            "description": "Virtual Workspaces are not supported with Voyager code completion."
         }
     },
     "activationEvents": [
@@ -59,13 +59,15 @@
         "lint": "eslint src --ext ts",
         "format-check": "prettier --check 'src/**/*.ts' 'build/**/*.yml' '.github/**/*.yml'",
         "test": "node ./out/test/runTest.js",
-        "vsce-package": "vsce package -o <pytool-module>.vsix"
+        "vsce-package": "vsce package -o pydantic-codecompletion-extension.vsix"
     },
     "contributes": {
         "configuration": {
             "properties": {
-                "<pytool-module>.args": {
-                    "default": [],
+                "pydantic-codecompletion-extension.args": {
+                    "default": [
+                        "~/.voyager_current_model/model.py"
+                    ],
                     "description": "Arguments passed in. Each argument is a separate item in the array.",
                     "items": {
                         "type": "string"
@@ -73,30 +75,30 @@
                     "scope": "resource",
                     "type": "array"
                 },
-                "<pytool-module>.path": {
+                "pydantic-codecompletion-extension.path": {
                     "default": [],
-                    "description": "When set to a path to <pytool-module> binary, extension will use that. NOTE: Using this option may slowdown server response time.",
+                    "description": "When set to a path to pydantic-codecompletion-extension binary, extension will use that. NOTE: Using this option may slowdown server response time.",
                     "scope": "resource",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
-                "<pytool-module>.importStrategy": {
+                "pydantic-codecompletion-extension.importStrategy": {
                     "default": "useBundled",
-                    "description": "Defines where `<pytool-module>` is imported from. This setting may be ignored if `<pytool-module>.path` is set.",
+                    "description": "Defines where `pydantic-codecompletion-extension` is imported from. This setting may be ignored if `pydantic-codecompletion-extension.path` is set.",
                     "enum": [
                         "useBundled",
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
-                        "Always use the bundled version of `<pytool-module>`.",
-                        "Use `<pytool-module>` from environment, fallback to bundled version only if `<pytool-module>` not available in the environment."
+                        "Always use the bundled version of `pydantic-codecompletion-extension`.",
+                        "Use `pydantic-codecompletion-extension` from environment, fallback to bundled version only if `pydantic-codecompletion-extension` not available in the environment."
                     ],
                     "scope": "window",
                     "type": "string"
                 },
-                "<pytool-module>.interpreter": {
+                "pydantic-codecompletion-extension.interpreter": {
                     "default": [],
                     "description": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
                     "scope": "resource",
@@ -105,7 +107,7 @@
                     },
                     "type": "array"
                 },
-                "<pytool-module>.showNotifications": {
+                "pydantic-codecompletion-extension.showNotifications": {
                     "default": "off",
                     "description": "Controls when notifications are shown by this extension.",
                     "enum": [
@@ -128,8 +130,8 @@
         "commands": [
             {
                 "title": "Restart Server",
-                "category": "<pytool-display-name>",
-                "command": "<pytool-module>.restart"
+                "category": "Voyager code completion",
+                "command": "pydantic-codecompletion-extension.restart"
             }
         ]
     },
